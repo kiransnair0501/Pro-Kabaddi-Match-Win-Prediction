@@ -30,6 +30,10 @@ The prediction model considers:
 9. **Tackle Success Rate (Team 2)** – % of successful tackles by Team 2  
 
 ---
+## 📸 Project Screenshots
+<img width="1086" height="483" alt="Screenshot 2025-08-15 161423" src="https://github.com/user-attachments/assets/61bc1c0a-129c-4f34-a5af-16548027923f" />
+
+<img width="1096" height="469" alt="Screenshot 2025-08-15 161436" src="https://github.com/user-attachments/assets/a9ebbb39-68b0-406c-8531-841a2396c513" />
 
 ## 📂 Project Structure
 
