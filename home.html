@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabaddi Win Predictor</title>
+    <style>
+        /* General Reset */
+        body, h1, form, label, select, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background and Font */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background-image: url('https://www.prokabaddi.com/static-assets/waf-images/9c/55/fd/16-9/1035-512/zhS4WDvpnK.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* Header */
+        .container h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #ffcc00;
+        }
+
+        /* Form Styling */
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        form select, form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            background: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        form button:hover {
+            background: #ffaa00;
+            color: #fff;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kabaddi Win Predictor</h1>
+        <form action="/predict" method="post">
+            <label for="team1">Team 1:</label>
+            <select id="team1" name="team1" required>
+                <option value="" disabled selected>Select Team 1</option>
+                {% for team in teams %}
+                <option value="{{ team }}">{{ team }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="team2">Team 2:</label>
+            <select id="team2" name="team2" required>
+                <option value="" disabled selected>Select Team 2</option>
+                {% for team in teams %}
+                <option value="{{ team }}">{{ team }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="time_left">Time Left (minutes):</label>
+            <input type="number" id="time_left" name="time_left" required>
+
+            <label for="team1_score">Team 1 Score:</label>
+            <input type="number" id="team1_score" name="team1_score" required>
+
+            <label for="team2_score">Team 2 Score:</label>
+            <input type="number" id="team2_score" name="team2_score" required>
+
+            <label for="raid_success_1">Raid Success Rate (Team 1):</label>
+            <input type="number" id="raid_success_1" name="raid_success_1" step="0.01" required>
+
+            <label for="raid_success_2">Raid Success Rate (Team 2):</label>
+            <input type="number" id="raid_success_2" name="raid_success_2" step="0.01" required>
+
+            <label for="tackle_success_1">Tackle Success Rate (Team 1):</label>
+            <input type="number" id="tackle_success_1" name="tackle_success_1" step="0.01" required>
+
+            <label for="tackle_success_2">Tackle Success Rate (Team 2):</label>
+            <input type="number" id="tackle_success_2" name="tackle_success_2" step="0.01" required>
+
+            <button type="submit">Predict</button>
+        </form>
+        <div class="footer">
+            Made with ❤️ for Kabaddi fans | <a href="https://kabaddi.com">Learn More</a>
+        </div>
+    </div>
+</body>
+</html>
